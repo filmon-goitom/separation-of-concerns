@@ -45,6 +45,17 @@
           debugger;
 
           // write me! (... without using cloneNode, that's kind of cheating)
+
+          const actual = document.getElementById('actual')
+          const header = document.createElement('h1')
+          header.innerText = 'a list of things'
+          
+          const ul = actual.children[0]
+          const li = ul.children[1]
+          li.innerText = 'solar systems'          
+
+
+          actual.append(header, ul)
         </script>
       </div>
 

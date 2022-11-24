@@ -33,12 +33,12 @@
         </div>
 
         <div id="actual">
-          <ol>
+          <orderedList>
             <li>robots</li>
             <li>wrong wrong wrong wrong</li>
             <li>oil</li>
             <li>oil</li>
-          </ol>
+          </orderedList>
         </div>
 
         <script id="dom-manipulation-script">
@@ -46,6 +46,33 @@
           debugger;
 
           // write me! (... without using cloneNode, that's kind of cheating)
+
+        const actual = document.getElementById('actual');
+        const orderedList = actual.children[0];
+        const unorderedList = document.createElement('ul');
+        const link = orderedList.children.length;
+        
+        for (let i = 0; i < link; i++) {
+          let cloneLi = orderedList.children[i].cloneNode(true);
+          unorderedList.appendChild(cloneLi);
+        }
+        actual.replaceChild(unorderedList, orderedList);
+        const header = document.createElement("h1");
+        header.innerText = 'a list of things';
+        const ulSelect = actual.children[0];
+        ulSelect.children[2].remove();
+        ulSelect.children[1].innerText = 'solar systems';
+        actual.insertBefore(header, ulSelect);
+          
+
+
+          
+          
+          actual.append(h1 , ul)
+          
+          actual.replaceChild(orderedList , ul)
+          orderedList.removeChild(toRemove)
+
         </script>
       </div>
 
