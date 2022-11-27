@@ -41,9 +41,31 @@
 
         <script id="dom-manipulation-script">
           'use strict';
-          debugger;
+          //debugger;
 
-          // write me! (... without using cloneNode, that's kind of cheating)
+          const actual = document.getElementById('actual')
+          
+          const h2 = document.createElement('h2')
+          h2.innerText = 'a list of things'
+
+
+          //create unordered list
+          const unorderedList = document.createElement('ul') 
+          const listLinks = ['robots' , 'solar systems','learn about badgers', 'oil']
+
+          for(let list of listLinks){
+            const toAddList = document.createElement('li')
+            toAddList.textContent = list;
+
+            unorderedList.appendChild(toAddList)
+          }
+
+          actual.append(h2 , unorderedList);
+
+          actual.children[1].children[2].innerHTML = '<a href="https://www.badgerbadgerbadger.com" expected="_blank">learn about badgers</a>'
+
+
+
         </script>
       </div>
 
